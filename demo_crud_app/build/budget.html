@@ -1,0 +1,163 @@
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Quick Budget - demo_crud_app
+  </title>
+  <script src="assets/utils.js" type="test/javascript">
+  </script>
+  <script>
+   function zoom(element) {
+  var newTab = window.open();
+  setTimeout(function () {
+    const imgEl = element.firstElementChild.cloneNode();
+    imgEl.removeAttribute("style");
+    newTab.document.body.append(imgEl);
+  }, 500);
+  return false;
+}
+  </script>
+  <style>
+   div[style*="margin: 16px 0;"] {margin:0}
+  </style>
+ </head>
+ <body style='-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:"Average Sans", sans-serif; font-size:14px; margin:0; padding:0; width:100%' width="100%">
+  <center>
+   <div bgcolor="#1173c7" class="header the-max-width h64" height="64" style="max-width:900px; background-color:#1173c7; color:white; display:flex; flex-direction:column; justify-content:center; height:64px">
+    <h1 style="font-family:sans-serif; font-weight:500; margin:0; font-size:200%">
+     Demo CRUD App
+    </h1>
+    <em>
+     Analysis of how much time can be spend developing a simple CRUD app
+    </em>
+   </div>
+   <div class="body">
+    <div bgcolor="#ffffff" class="quadrant-container the-max-width" style="max-width:900px; background-color:#fff; display:flex; flex-direction:row; flex-wrap:wrap">
+     <div class="quadrant" style="display:flex; flex-direction:column; align-items:center; outline:1px solid black; min-height:50px; width:50%" width="50%">
+      <h1 style="font-family:sans-serif; font-weight:500; margin:0; font-size:200%">
+       Increased Revenues / month
+      </h1>
+      <table class="quadrant-table" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black; width:90%; border-collapse:collapse" width="90%">
+       <thead>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         Description
+        </th>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         $
+        </th>
+       </thead>
+       <tbody>
+        <tr>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          25 recordkeeping events @ 15 minutes / event * $25 / hr
+         </td>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          $156.25
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="quadrant" style="display:flex; flex-direction:column; align-items:center; outline:1px solid black; min-height:50px; width:50%" width="50%">
+      <h1 style="font-family:sans-serif; font-weight:500; margin:0; font-size:200%">
+       Decreased Revenues / month
+      </h1>
+      <table class="quadrant-table" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black; width:90%; border-collapse:collapse" width="90%">
+       <thead>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         Description
+        </th>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         $
+        </th>
+       </thead>
+       <tbody>
+        <tr>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          -
+         </td>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          $0
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="quadrant" style="display:flex; flex-direction:column; align-items:center; outline:1px solid black; min-height:50px; width:50%" width="50%">
+      <h1 style="font-family:sans-serif; font-weight:500; margin:0; font-size:200%">
+       Decreased Costs / month
+      </h1>
+      <table class="quadrant-table" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black; width:90%; border-collapse:collapse" width="90%">
+       <thead>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         Description
+        </th>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         $
+        </th>
+       </thead>
+       <tbody>
+        <tr>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          -
+         </td>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          $0
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="quadrant" style="display:flex; flex-direction:column; align-items:center; outline:1px solid black; min-height:50px; width:50%" width="50%">
+      <h1 style="font-family:sans-serif; font-weight:500; margin:0; font-size:200%">
+       Increased Costs / month
+      </h1>
+      <table class="quadrant-table" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black; width:90%; border-collapse:collapse" width="90%">
+       <thead>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         Description
+        </th>
+        <th style="mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+         $
+        </th>
+       </thead>
+       <tbody>
+        <tr>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          -
+         </td>
+         <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0; mso-table-rspace:0; border:1px solid black">
+          $0
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div bgcolor="#ffffff" class="footer the-max-width h64" height="64" style="max-width:900px; background-color:#fff; height:64px; display:flex; flex-direction:column; align-items:start; padding-top:1rem">
+    <h4 class="m0" style="font-family:sans-serif; font-weight:500; margin:0; font-size:115%">
+     Monthly Net:
+     <strong>
+      $156.25
+     </strong>
+    </h4>
+    <p class="m0" style="margin:0">
+     Maximum developer hours we can invest to break even in 1 year:
+     <strong>
+      37.5
+     </strong>
+    </p>
+    <p class="m0" style="margin:0">
+     Maximum developer hours we can invest to break even in 5 years:
+     <strong>
+      187.5
+     </strong>
+    </p>
+   </div>
+  </center>
+ </body>
+</html>
+

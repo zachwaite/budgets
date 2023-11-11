@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ title }}</title>
+        <script type="test/javascript" src="assets/utils.js"></script>
+        <style type="text/css" href="assets/styles.css"></style>
+    </head>
+    <body>
+      <center>
+          <div class="header the-max-width h64">
+              <h1>{{ name }}</h1>
+              <em>{{ description }}</em>
+          </div>
+          <div class="body">
+              <div class="quadrant-container the-max-width">
+                  <div class="quadrant">
+                      <h1>
+                          Increased Revenues / month
+                      </h1>
+                      {% set monthly_net = namespace(value=0) %}
+                      <table class="quadrant-table">
+                          <thead>
+                              <th>Description</th>
+                              <th>$</th>
+                          </thead>
+                          <tbody>
+                              {% for line in increased_revenues %}
+                                {% set monthly_net.value = monthly_net.value + line['value'] %}
+                                  <tr>
+                                      <td>
+                                          {{ line['label'] }}
+                                      </td>
+                                      <td>
+                                          ${{ line['value'] }}
+                                      </td>
+                                  </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="quadrant">
+                      <h1>
+                          Decreased Revenues / month
+                      </h1>
+                      <table class="quadrant-table">
+                          <thead>
+                              <th>Description</th>
+                              <th>$</th>
+                          </thead>
+                          <tbody>
+                              {% for line in decreased_revenues %}
+                                {% set monthly_net.value = monthly_net.value + line['value'] %}
+                                  <tr>
+                                      <td>
+                                          {{ line['label'] }}
+                                      </td>
+                                      <td>
+                                          ${{ line['value'] }}
+                                      </td>
+                                  </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="quadrant">
+                      <h1>
+                          Decreased Costs / month
+                      </h1>
+                      <table class="quadrant-table">
+                          <thead>
+                              <th>Description</th>
+                              <th>$</th>
+                          </thead>
+                          <tbody>
+                              {% for line in decreased_costs %}
+                                {% set monthly_net.value = monthly_net.value - line['value'] %}
+                                  <tr>
+                                      <td>
+                                          {{ line['label'] }}
+                                      </td>
+                                      <td>
+                                          ${{ line['value'] }}
+                                      </td>
+                                  </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="quadrant">
+                      <h1>
+                          Increased Costs / month
+                      </h1>
+                      <table class="quadrant-table">
+                          <thead>
+                              <th>Description</th>
+                              <th>$</th>
+                          </thead>
+                          <tbody>
+                              {% for line in increased_costs %}
+                                {% set monthly_net.value = monthly_net.value - line['value'] %}
+                                  <tr>
+                                      <td>
+                                          {{ line['label'] }}
+                                      </td>
+                                      <td>
+                                          ${{ line['value'] }}
+                                      </td>
+                                  </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          <div class="footer the-max-width h64 ">
+              <h4 class="m0">Monthly Net: <strong>${{ monthly_net.value }}</strong></h4>
+              <p class="m0">
+                  {% set max_hrs_1y = monthly_net.value * 12 / developer_hourly_rate %}
+                  Maximum developer hours we can invest to break even in 1 year: <strong>{{ max_hrs_1y }}</strong>
+              </p>
+              <p class="m0">
+                  {% set max_hrs_5y = monthly_net.value * 12 * 5 / developer_hourly_rate %}
+                  Maximum developer hours we can invest to break even in 5 years: <strong>{{ max_hrs_5y }}</strong>
+              </p>
+          </div>
+      </center>
+    </body>
+</html>

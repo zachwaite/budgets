@@ -1,0 +1,11 @@
+black
+isort
+jinja2
+markdown2
+premailer
+bs4
+fastapi
+uvicorn
+websockets
+matplotlib
+pyyaml
